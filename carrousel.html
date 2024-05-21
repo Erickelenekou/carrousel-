@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="ensemble">
+        <img src="assets/gauche.jpeg" alt="" width="20px" height="20px" id="gauche">
+            <div class="les_images">
+                <img src="assets/image1.jpg" alt="" width="200px" height="200px">
+                <img src="assets/resilience.jpg" alt="" width="200px" height="200px">
+                <img src="assets/image1.jpg" alt="" width="200px" height="200px">
+                <img src="assets/resilience.jpg" alt="" width="200px" height="200px">
+            </div>
+        <img src="assets/droite.jpeg" alt="" width="20px" height="20px" id="droite">
+    </section>
+
+    <style>
+        .ensemble{
+            display: flex;
+        }
+
+        #droite{
+            margin-top: 100px;
+        }
+        #gauche{
+            margin-top: 100px;
+        }
+
+        .les_images {
+            width: 460px;
+            display: flex;
+            overflow-x: scroll;
+        }
+        .les_images::-webkit-scrollbar{
+            display: none;
+        }
+        .les_images img{
+            margin: 15px;
+        }
+
+        .les_images img:hover{
+            filter: grayscale();
+            cursor: pointer;
+            transform: scale(1,5);
+        }
+
+    </style>
+
+    <script>
+        let les_images=document.querySelector('.les_images')
+        let gauche=document.getElementById('gauche')
+        let droite=document.getElementById('droite')
+
+        gauche.addEventListener('click', function () {
+            les_images.scrollLeft -=100
+        })
+        droite.addEventListener('click', function () {
+            les_images.scrollLeft +=100
+        })
+    </script>
+</body>
+</html>
